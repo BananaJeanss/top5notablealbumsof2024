@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  font-family: "Sour Gummy", sans-serif;
+  background: #66d4ff;
+  background: linear-gradient(
+    180deg,
+    rgba(102, 212, 255, 1) 0%,
+    rgba(153, 153, 255, 1) 100%
+  );
+  color: #ffffff;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.hero-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-container h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-container p {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-container p,
+.hero-container h1 {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.hero-container h1 {
+  animation-delay: 0.2s;
+}
+
+.hero-container p {
+  animation-delay: 0.8s;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-20px);
+  }
+}
+
+#scrolldown-arrow {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1) drop-shadow(-1px -1px 0 #000)
+    drop-shadow(1px -1px 0 #000) drop-shadow(-1px 1px 0 #000)
+    drop-shadow(1px 1px 0 #000);
+  animation: bounce 2s infinite;
+}
+
+.content {
+  text-align: center;
+}
+
+.album-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin: auto 10%;
+}
+
+.album-list p {
+  margin: 0;
+}
+
+.album-list h3 {
+  margin-bottom: 5px;
+}
+
+.album-list img {
+  width: 85%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.album-list img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.album-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 20px;
+}
+
+.album-detail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  width: 75vmax;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  gap: 5%;
+}
+
+.album-detail img {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.album-detail h3 {
+  margin: 0;
+  font-size: 1.65rem;
+}
+
+.album-detail p {
+  margin: 5px 0;
+  font-size: 1.05rem;
+}
+
+.album-detail img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+a {
+  color: #7ccfff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #3cb7ff;
+  text-decoration: underline;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ffffff;
+  margin: 20px 0;
+  margin: 80px auto;
+  width: 50%;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .album-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .album-detail {
+    flex-direction: column;
+    text-align: center;
+    width: 90%;
+  }
+  .album-detail img {
+    width: 25vmax;
+  }
+}
+
+@media (max-width: 500px) {
+  .album-list {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 1500px) {
+    .album-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1500px) {
+    .hero-container h1 {
+        font-size: 5rem;
+    }
+    .hero-container p {
+        font-size: 2.25rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+  .album-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .album-list h3 {
+    font-size: 1.8rem;
+  }
+
+  .album-list p {
+    font-size: 1.5rem;
+  }
+
+  .album-detail {
+    flex-direction: column;
+    text-align: center;
+    width: 90%;
+    gap: 40px;
+  }
+  
+  .detail-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    }
+
+  .album-detail h3 {
+    font-size: 3rem;
+  }
+
+  .album-detail p {
+    font-size: 2rem;
+  }
+
+  footer {
+    font-size: 1.8rem;
+  }
+}
